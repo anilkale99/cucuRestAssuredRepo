@@ -1,7 +1,7 @@
-Feature: Data driven in Rest Assured test POST 
+Feature: Data driven in Rest Assured test POST1
 
 
-Scenario Outline: Test data driven 
+Scenario Outline: Test data driven11 
 Given  user update name with "<name>" name
 When  user update job with "<job>" name
 Then user post the request
