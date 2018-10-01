@@ -1,6 +1,6 @@
 package com.basic.BasicsOfRestAssured;
 
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -9,7 +9,7 @@ import io.restassured.response.Response;
 public class TestPOSTRequest {
 	
 	
-	@Test
+	//@Test
 	public void testPost1(){
 		
 		Response resp = RestAssured.given().accept(ContentType.JSON).relaxedHTTPSValidation().
@@ -20,7 +20,7 @@ public class TestPOSTRequest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void testPostWithJsonFile(){
 		
 		Response resp = RestAssured.given().accept(ContentType.JSON).relaxedHTTPSValidation().

@@ -1,6 +1,6 @@
 package com.basic.BasicsOfRestAssured;
 
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
@@ -9,7 +9,7 @@ public class FirstScriptForGoogle {
 	
 	
 	
-		@Test
+		//@Test
 		public void testMethod(){
 			
 			//Case 1

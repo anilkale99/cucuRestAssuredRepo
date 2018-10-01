@@ -1,8 +1,8 @@
 package com.basic.BasicsOfRestAssured;
 
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+//import org.testng.Assert;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -12,7 +12,7 @@ import io.restassured.specification.RequestSpecification;
 public class TestRequestSpecification {
 	
 	
-	@BeforeClass
+	//@BeforeClass
 	public void testBaseURI(){
 	
 		RestAssured.baseURI = "https://ergast.com";
@@ -22,7 +22,7 @@ public class TestRequestSpecification {
 	}
 	
 	
-	@Test
+	//@Test
 	public void testRequestSpecification(){
 		//Response resp = 
 		
@@ -34,7 +34,7 @@ public class TestRequestSpecification {
 		resp.then().log().status();
 		
 		String limitValue = resp.getBody().jsonPath().getString("MRData.limit");
-		Assert.assertEquals("30", limitValue);
+		//Assert.assertEquals("30", limitValue);
 	}
 
 }

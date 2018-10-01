@@ -5,8 +5,8 @@ import static org.hamcrest.Matchers.equalTo;
 
 import java.util.List;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+//import org.testng.Assert;
+//import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
@@ -16,7 +16,7 @@ import io.restassured.response.Response;
 public class TestSet1 {
 	
 	
-	@Test
+	//@Test
 	public void testSizeOf(){
 		
 		
@@ -52,7 +52,7 @@ public class TestSet1 {
 	
 	
 	
-	@Test
+	//@Test
 	public void testResponseHeaders(){
 		
 		
@@ -77,7 +77,7 @@ public class TestSet1 {
 	
 	
 	
-	@Test
+	//@Test
 	public void test(){
 		
 		
@@ -99,7 +99,7 @@ public class TestSet1 {
 	}
 	
 	
-	@Test
+	//@Test
 	public void testResponseValueStringWithJsonpathWithTestNG(){
 		
 		//Response resp = 
@@ -107,11 +107,11 @@ public class TestSet1 {
 				when().get("https://ergast.com/api/f1/2017/circuits.json");
 		
 		String limitValue = resp.getBody().jsonPath().getString("MRData.limit");
-		Assert.assertEquals("30", limitValue);
+		//Assert.assertEquals("30", limitValue);
 		
 	}
 	
-	@Test
+	//@Test
 	public void testResponseValueStringWithJsonpath(){
 		
 		//Response resp = 
