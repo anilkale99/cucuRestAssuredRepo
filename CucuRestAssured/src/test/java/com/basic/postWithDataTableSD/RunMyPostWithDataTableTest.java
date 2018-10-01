@@ -13,7 +13,12 @@ import cucumber.api.junit.Cucumber;
 			monochrome=true,
 			dryRun=false,
 			features= {"src/test/resources/com/basic/postWithDataTableFF/"},
-			glue={"com/basic/postWithDataTableSD/"}
+			glue={"com/basic/postWithDataTableSD/"},
+			plugin={"pretty",
+					"html:target/cucumber-htmlreport",
+					"json:target/cucumber-report3.json",
+					"com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport1.html"
+			}
 		)
 		
 

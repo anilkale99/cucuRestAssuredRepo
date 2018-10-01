@@ -21,7 +21,7 @@ import cucumber.api.junit.Cucumber;
 			glue={"com/basic/getWithTagsOfCucuSD/"},
 			plugin={"pretty",
 					"html:target/cucumber-htmlreport",
-					"json:target/cucumber-report1.json",
+					"json:target/cucumber-report6.json",
 					"com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport1.html"
 			}
 		)

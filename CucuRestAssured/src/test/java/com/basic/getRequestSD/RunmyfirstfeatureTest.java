@@ -13,7 +13,12 @@ import cucumber.api.junit.Cucumber;
 			monochrome=true,
 			dryRun=false,
 			features= {"src/test/resources/com/basic/getRequestFF/"},
-			glue={"com/basic/getRequestSD/"}
+			glue={"com/basic/getRequestSD/"},
+			plugin={"pretty",
+					"html:target/cucumber-htmlreport",
+					"json:target/cucumber-report9.json",
+					"com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport1.html"
+			}
 		)
 		
 
