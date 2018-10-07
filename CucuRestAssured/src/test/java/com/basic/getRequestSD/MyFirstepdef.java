@@ -12,19 +12,12 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 
 public class MyFirstepdef {
-
-	Response resp;
 	
+	Response resp;
+
 	@Given("^user start the rest asured test$")
 	public void user_start_the_rest_asured_test(){
-		
 		System.out.println("Starting of the GET request");
-		
-//		given().
-//		when().
-//		then().
-//		Assert().
-		
 	}
 	
 	@When("^user hit the get request$")
@@ -56,11 +49,8 @@ public class MyFirstepdef {
 	@Then("^user checks the count or size$")
 	public void user_checks_the_count_or_size(){
 		
-		resp.then().assertThat().body("MRData.CircuitTable.Circuits.circuitId",hasSize(20));
-		
 		String limitValue = resp.getBody().jsonPath().getString("MRData.limit");
 		Assert.assertEquals("30", limitValue);
-		
 		
 		//verify the size
 		resp.then().assertThat().body("MRData.CircuitTable.Circuits.circuitId",hasSize(20));
@@ -80,6 +70,21 @@ public class MyFirstepdef {
 		String actualCircuitValue = resp.getBody().jsonPath().getString(path);
 		Assert.assertEquals(expValue, actualCircuitValue);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

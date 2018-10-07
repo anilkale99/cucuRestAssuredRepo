@@ -4,6 +4,10 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.equalTo;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.skyscreamer.jsonassert.JSONCompareMode;
 
 //import org.testng.Assert;
 //import org.testng.annotations.Test;
@@ -11,6 +15,7 @@ import java.util.List;
 import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
+import io.restassured.internal.path.json.JSONAssertion;
 import io.restassured.response.Response;
 
 public class TestSet1 {
@@ -120,6 +125,41 @@ public class TestSet1 {
 		
 		resp.then().assertThat().body("MRData.limit", equalTo("30"));
 		
+	}
+	
+	
+	public void testCompareTwoJson(){
+		
+		String actual = "{id:123, name:\"John\"}";
+		String expected = "{id:123, name:\"JohnABC\"}";
+		
+		
+		//LENIENT : means that even if the actual JSON contains extended fields, the test will still pass
+		//STRICT : means that if the actual JSON contains extended fields, the test will still FAIL
+		JSONAssert.assertEquals(expected, actual, JSONCompareMode.LENIENT);
+	}
+	
+	
+	public void testQueryParameter(){
+		
+		//Response resp = 
+		Response resp = RestAssured.given().relaxedHTTPSValidation()
+				.queryParam("text", "test")
+				.when().get("http://md5.jsontest.com");
+		System.out.println(resp.asString());
+				
+	}
+	
+	
+	public void testRespTime(){
+		
+		//Response resp = 
+		Response resp = RestAssured.given().relaxedHTTPSValidation()
+				.queryParam("text", "test")
+				.when().get("http://md5.jsontest.com");
+		System.out.println(resp.time());
+		System.out.println(resp.timeIn(TimeUnit.SECONDS));
+				
 	}
 	
 	

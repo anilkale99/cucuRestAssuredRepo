@@ -28,7 +28,7 @@ public class MyParameterFilterStepdef {
 		//Path Parameter
 		resp = RestAssured.given().relaxedHTTPSValidation()
 				.pathParam("country", "India").
-					when().get("http://restcountries.eu/rest/v1/name/{country}");
+	when().get("http://restcountries.eu/rest/v1/name/{country}");
 		
 		//print response in string
 		String respString = resp.asString();

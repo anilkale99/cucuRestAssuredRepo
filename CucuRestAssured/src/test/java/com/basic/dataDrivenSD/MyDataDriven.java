@@ -31,15 +31,12 @@ public class MyDataDriven {
 	public void user_update_name_with_name (String username) throws IOException{
 		
 		//Read data from file
-	    data = new String(Files.readAllBytes(Paths.get("D:\\IBM\\workspace\\CucuRestAssured\\src\\test\\java\\com\\basic\\postFromTextFileSD\\user.json"))); 
+	    data = new String(Files.readAllBytes(Paths.get("D:\\IBM\\workspace\\CucuRestAssured\\src\\test\\java\\com\\basic\\dataDrivenSD\\user.json"))); 
 	    System.out.println("json in String ==== " +data);
 	    
 	    //Update the data
 	    object=new JSONObject(data);
 	    object.put("name", username);
-//	    newJsonStr = object.toString();
-//	    System.out.println("json in String ==== " +newJsonStr);
-	    
 	   
 	}
 	
@@ -73,22 +70,6 @@ public class MyDataDriven {
 		Assert.assertTrue(idInt > 0);
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
  

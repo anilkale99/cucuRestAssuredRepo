@@ -17,7 +17,10 @@ public class TestRequestSpecification {
 	
 		RestAssured.baseURI = "https://ergast.com";
 		RestAssured.basePath = "/api";
-		RequestSpecification req = RestAssured.given().accept(ContentType.JSON);
+		RequestSpecification req = RestAssured.given()
+				.accept(ContentType.JSON)
+				.headers("","");
+				
 	
 	}
 	

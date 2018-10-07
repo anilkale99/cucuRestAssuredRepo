@@ -55,6 +55,8 @@ public class MyPostWithDataTable {
 		
 		
 		List<List<String>> data = table.raw();
+//		int i = data.size();
+//		int j = data.get(0).size();
 		
 		//row 1
 		String values1 = data.get(0).get(0);

@@ -1,4 +1,4 @@
-package com.basic.postUpdatedJsonSD;
+package com.basic.postStringJsonSD;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,27 +20,21 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.Assert;
 
-public class MyPostFromTextFile {
+public class MyPostStringJson {
 	 
 	Response resp ;
 	
-	@Given("^user hit the post request with \"([^\"]*)\" name$")
-	public void user_hit_the_post_request_with_json_data(String username) throws IOException{
+	@Given("^user hit the post request from String$")
+	public void user_hit_the_post_request_with_String() throws IOException{
 		
-		//Read data from file
-		String data = ""; 
-	    data = new String(Files.readAllBytes(Paths.get("D:\\IBM\\workspace\\CucuRestAssured\\src\\test\\java\\com\\basic\\postFromTextFileSD\\user.json"))); 
-	    System.out.println("json in String ==== " +data);
-	    
-	    //Update the data
-	    JSONObject object=new JSONObject(data);
-	    object.put("name", username);
-	    String newJsonStr = object.toString();
-	    System.out.println("json in String ==== " +newJsonStr);
-	    
-	    //Do POST request
-	    resp = RestAssured.given().accept(ContentType.JSON).relaxedHTTPSValidation().
-				when().body(newJsonStr).post("https://reqres.in/api/users");
+		
+		
+		resp = RestAssured.given().accept(ContentType.JSON).relaxedHTTPSValidation().
+				when().body("{    \"name\": \"Tom\",    \"job\":\"Actor\"}").post("https://reqres.in/api/users");
+		resp.then().log().all();
+		resp.then().log().status();
+		System.out.println("====="+resp.asString());
+		
 	}
 	
 	@Then("user validate the id is not null")
